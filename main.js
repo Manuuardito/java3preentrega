@@ -23,7 +23,14 @@ function createProductCard(product) {
       <p>Precio: $${product.price.toFixed(2)}</p>
       <button class="buy-button" data-id="${product.id}">Comprar</button>
   `;
-  return card;
+  
+// agregar las tarjetas de producto al contenedor
+const productContainer = document.querySelector('.product-container');
+products.forEach(product => {
+  const card = createProductCard(product);
+  productContainer.appendChild(card);
+});
+
 }
 
 // agregar las tarjetas de producto al contenedor
