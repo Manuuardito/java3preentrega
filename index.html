@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Monedas</title>
     <link rel="stylesheet" href="style.css">
+    <title>TiendaMia</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Simulador de Monedas</h1>
+    <header>
+        <h1>TiendaMia </h1>
+        <button class="open-cart">Ver Carrito</button>
+    </header>
+    
+    <div class="product-container">
+       
+        <div class="product-card">
+            <img src="./media/producto1.png" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>Precio: $60.00</p>
+            <button class="buy-button" data-id="1">Comprar</button>
+        </div>
         
-        <h2>Instrucciones</h2>
-        <p>
-            Este programa te permitirá convertir entre diferentes monedas.
-        </p>
-        <p>
-            Para utilizar el simulador, sigue los siguientes pasos:
-        </p>
-        <ol>
-            <li>Selecciona la moneda de origen en el primer menú desplegable.</li>
-            <li>Selecciona la moneda de destino en el segundo menú desplegable.</li>
-            <li>Ingresa la cantidad que deseas convertir en el tercer cuadro de texto. Por ejemplo, si deseas convertir
-                100 Dólares Americanos, ingresa "100" en el cuadro de texto.</li>
-        </ol>
-        <div>
-            <label for="deMoneda">Moneda de Origen:</label>
-            <select id="deMoneda">
-                <option value="USD">Dólar Americano</option>
-                <option value="EUR">Euro</option>
-                <option value="UYU">Peso Uruguayo</option>
-                <option value="ARS">Peso Argentino</option>
-                <option value="CLP">Peso Chileno</option>
-                <option value="BRL">Real Brasileño</option>
-            </select>
+        <div class="product-card">
+            <img src="./media/producto2.png" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p>Precio: $40.00</p>
+            <button class="buy-button" data-id="2">Comprar</button>
         </div>
-        <div>
-            <label for="aMoneda">Moneda de Destino:</label>
-            <select id="aMoneda">
-                <option value="USD">Dólar Americano</option>
-                <option value="EUR">Euro</option>
-                <option value="UYU">Peso Uruguayo</option>
-                <option value="ARS">Peso Argentino</option>
-                <option value="CLP">Peso Chileno</option>
-                <option value="BRL">Real Brasileño</option>
-            </select>
+        
+        <div class="product-card">
+            <img src="./media/producto3.png" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p>Precio: $70.00</p>
+            <button class="buy-button" data-id="3">Comprar</button>
         </div>
-        <div>
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" placeholder="100">
+        
+        <div class="product-card">
+            <img src="./media/producto4.png" alt="Producto 4">
+            <h2>Producto 4</h2>
+            <p>Precio: $55.00</p>
+            <button class="buy-button" data-id="4">Comprar</button>
         </div>
-        <button id="btnConvertir">Convertir</button>
-        <div id="resultado"></div>
+        
+        <div class="product-card">
+            <img src="./media/producto5.png" alt="Producto 5">
+            <h2>Producto 5</h2>
+            <p>Precio: $80.00</p>
+            <button class="buy-button" data-id="5">Comprar</button>
+        </div>
+       
+        <div class="product-card">
+            <img src="./media/producto6.png" alt="Producto 6">
+            <h2>Producto 6</h2>
+            <p>Precio: $50.00</p>
+            <button class="buy-button" data-id="6" >Comprar</button>
+        </div>
+       
+    </div>
 
-        <button id="modoOscuroBtn">Modo Oscuro</button> 
-        
+    <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <div class="cart-items">
+          
+        </div>
+        <button class="checkout" >Realizar Compra</button>
+        <button class="cancel">Cancelar Compra</button>
     </div>
 
     
 
+    <footer>
+        <p>&copy; 2023 TiendaMia</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
