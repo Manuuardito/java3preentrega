@@ -1,10 +1,10 @@
 const products = [
-  { id: 1, name: 'Producto 1', price: 60.00, image: 'imagen1.jpg' },
-  { id: 2, name: 'Producto 2', price: 40.00, image: 'imagen2.jpg' },
-  { id: 3, name: 'Producto 3', price: 70.00, image: 'imagen3.jpg' },
-  { id: 4, name: 'Producto 4', price: 55.00, image: 'imagen4.jpg' },
-  { id: 5, name: 'Producto 5', price: 80.00, image: 'imagen5.jpg' },
-  { id: 6, name: 'Producto 6', price: 50.00, image: 'imagen6.jpg' }
+  { id: 1, name: 'Monitor Led', price: 60.00, image: '../media/producto1.png' },
+  { id: 2, name: 'Teclado Gammer', price: 40.00, image: '../media/producto2.png' },
+  { id: 3, name: 'Mouse óptico', price: 70.00, image: '../media/producto3.png' },
+  { id: 4, name: 'MousePad', price: 55.00, image: '../media/producto4.png' },
+  { id: 5, name: 'Jpystick Pro', price: 80.00, image: '../media/producto5.png' },
+  { id: 6, name: 'Web Cam', price: 50.00, image: '../media/producto6.png' }
   // agrega más productos aquí
 ];
 
@@ -15,6 +15,7 @@ const openCartButton = document.querySelector('.open-cart');
 
 // función para generar las tarjetas de producto
 function createProductCard(product) {
+  
   const card = document.createElement('div');
   card.classList.add('product-card');
   card.innerHTML = `
@@ -23,13 +24,7 @@ function createProductCard(product) {
       <p>Precio: $${product.price.toFixed(2)}</p>
       <button class="buy-button" data-id="${product.id}">Comprar</button>
   `;
-  
-// agregar las tarjetas de producto al contenedor
-const productContainer = document.querySelector('.product-container');
-products.forEach(product => {
-  const card = createProductCard(product);
-  productContainer.appendChild(card);
-});
+  return card;
 
 }
 
@@ -79,13 +74,13 @@ cartItemsContainer.addEventListener('click', event => {
       }
   }
 });
-
+/*
 // evento para abrir y cerrar el carrito
 openCartButton.addEventListener('click', () => {
   const cartContainer = document.querySelector('.cart');
   cartContainer.classList.toggle('cart-open');
 });
-
+*/
 // evento para realizar la compra
 const checkoutButton = document.querySelector('.checkout');
 const cancelButton = document.querySelector('.cancel');
@@ -132,6 +127,7 @@ cancelButton.addEventListener('click', () => {
       }).then((result) => {
           if (result.isConfirmed) {
               Swal.fire("Compra cancelada", "Tu compra ha sido cancelada", "info");
+              cart.length = 0;
               updateCart(); // actualiza el carrito para mostrar los productos actuales
           }
       });
